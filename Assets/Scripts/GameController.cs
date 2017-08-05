@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-    grid.InitializeGrid(2, 2);
+
 	}
 	
 	// Update is called once per frame

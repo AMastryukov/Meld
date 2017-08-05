@@ -4,28 +4,20 @@ using UnityEngine;
 
 public class GridTile : MonoBehaviour {
 
-  private int tileID;
+  public string tileType;
   private bool isWall;
   private bool isMeldable;
 
-  SpriteRenderer spriteRenderer;
-
   void Start()
   {
-    spriteRenderer = GetComponent<SpriteRenderer>();
+    switch(tileType)
+    {
+      case "floor":
+        GetComponent<BoxCollider2D>().enabled = false;
+        break;
+    }
   }
 
-  public int TileID
-  {
-    get
-    {
-      return tileID;
-    }
-    set
-    {
-      tileID = value;
-    }
-  }
   public bool IsWall
   {
     get
