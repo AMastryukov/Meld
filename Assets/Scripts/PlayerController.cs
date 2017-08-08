@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour {
   public float speed;
 
   private Rigidbody2D rigidBody;
-  
-	void Start () {
+
+  void Start () {
     rigidBody = GetComponent<Rigidbody2D>();
 	}
 	
@@ -19,5 +19,15 @@ public class PlayerController : MonoBehaviour {
     Vector2 movement = new Vector2(moveX, moveY);
 
     rigidBody.AddForce(movement * speed);
-	}
+  }
+
+  void Update()
+  {
+    Vector3 mousePosition = Input.mousePosition;
+    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+    
+    Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
+    transform.rotation = rot;
+    transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
+  }
 }

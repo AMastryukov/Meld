@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MeldTutorial : MonoBehaviour {
-
-  public GameObject cameraTutorial;
+  
   public GameObject meldTutorial;
 
   private void Start()
   {
-    cameraTutorial.SetActive(false);
     meldTutorial.SetActive(false);
   }
 

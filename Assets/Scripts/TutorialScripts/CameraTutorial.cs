@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraTutorial : MonoBehaviour {
 
-  public GameObject controlTutorial;
   public GameObject cameraTutorial;
 
   private void Start()
