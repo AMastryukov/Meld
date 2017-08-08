@@ -5160,6 +5160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 785127834}
+  deadzone: 10
 --- !u!1001 &781042647
 Prefab:
   m_ObjectHideFlags: 0
