@@ -6,13 +6,16 @@ public class PlayerMeld : MonoBehaviour {
 
   public GameController gameController;
   public Sprite[] playerSprites;
-  public GameObject light;
+  public GameObject lightObject;
+  public float meldAmount = 1.0f;
+  public bool insideWall = false;
 
   bool meldMode = false;
 
-  public float meldAmount = 1.0f;
   float meldDrainPerSecond = 0.25f;
   float meldGainPerSecond = 0.1f;
+
+  Vector3 meldStartPos;
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,7 +24,7 @@ public class PlayerMeld : MonoBehaviour {
       if (!meldMode && meldAmount < 0.5f)
       {
         
-      } else
+      } else if (!insideWall)
       {
         meldMode = !meldMode;
 
@@ -41,11 +44,15 @@ public class PlayerMeld : MonoBehaviour {
 
     if (meldAmount >= 1.0f) { meldAmount = 1.0f; }
 
-    // exit meld mode if meld meter runs out
+    // exit meld mode if meld meter runs out and teleport player back to the starting point
     if (meldAmount <= 0.0f)
     {
       meldAmount = 0.0f;
+      insideWall = false;
       meldMode = !meldMode;
+
+      // teleport player back
+      transform.position = meldStartPos;
 
       // update the meld status and walls
       updateMeld();
@@ -66,17 +73,19 @@ public class PlayerMeld : MonoBehaviour {
     // handle meld mode speed and sprite changes
     if (meldMode)
     {
+      meldStartPos = transform.position;
+
       GetComponent<PlayerController>().speed = 10;
       GetComponent<SpriteRenderer>().sprite = playerSprites[1];
-      light.GetComponent<Light>().intensity = 0.2f;
-      light.GetComponent<Light>().spotAngle = 55;
+      lightObject.GetComponent<Light>().intensity = 0.2f;
+      lightObject.GetComponent<Light>().spotAngle = 55;
     }
     else
     {
       GetComponent<PlayerController>().speed = 20;
       GetComponent<SpriteRenderer>().sprite = playerSprites[0];
-      light.GetComponent<Light>().intensity = 1.25f;
-      light.GetComponent<Light>().spotAngle = 110;
+      lightObject.GetComponent<Light>().intensity = 1.25f;
+      lightObject.GetComponent<Light>().spotAngle = 110;
     }
   }
 }
