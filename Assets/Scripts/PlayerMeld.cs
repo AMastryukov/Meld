@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMeld : MonoBehaviour {
 
   public GameController gameController;
-  public GameObject fow_overlay;
-  bool meldMode = false;
   public Sprite[] playerSprites;
+  public GameObject light;
+
+  bool meldMode = false;
 
   public float meldAmount = 1.0f;
   float meldDrainPerSecond = 0.25f;
@@ -67,13 +68,15 @@ public class PlayerMeld : MonoBehaviour {
     {
       GetComponent<PlayerController>().speed = 10;
       GetComponent<SpriteRenderer>().sprite = playerSprites[1];
-      fow_overlay.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+      light.GetComponent<Light>().intensity = 0.2f;
+      light.GetComponent<Light>().spotAngle = 55;
     }
     else
     {
       GetComponent<PlayerController>().speed = 20;
       GetComponent<SpriteRenderer>().sprite = playerSprites[0];
-      fow_overlay.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+      light.GetComponent<Light>().intensity = 1.25f;
+      light.GetComponent<Light>().spotAngle = 110;
     }
   }
 }
