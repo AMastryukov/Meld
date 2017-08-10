@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeldTutorial : MonoBehaviour {
-  
-  public GameObject meldTutorial;
+public class TutorialText : MonoBehaviour {
+
+  public GameObject tutorialText;
 
   private void Start()
   {
-    meldTutorial.SetActive(false);
+    tutorialText.SetActive(false);
   }
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
     if (collision.gameObject.tag == "Player")
     {
-      meldTutorial.SetActive(true);
+      tutorialText.SetActive(true);
     }
   }
 }
