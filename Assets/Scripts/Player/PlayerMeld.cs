@@ -78,14 +78,14 @@ public class PlayerMeld : MonoBehaviour {
       GetComponent<PlayerController>().speed = 12;
       GetComponent<SpriteRenderer>().sprite = playerSprites[1];
       lightObject.GetComponent<Light>().intensity = 0.8f;
-      lightObject.GetComponent<Light>().spotAngle = 55;
+      lightObject.GetComponent<Light>().spotAngle = 25;
     }
     else
     {
       GetComponent<PlayerController>().speed = 23;
       GetComponent<SpriteRenderer>().sprite = playerSprites[0];
       lightObject.GetComponent<Light>().intensity = 1.25f;
-      lightObject.GetComponent<Light>().spotAngle = 90;
+      lightObject.GetComponent<Light>().spotAngle = 60;
     }
   }
 }

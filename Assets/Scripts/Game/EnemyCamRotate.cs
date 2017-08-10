@@ -25,7 +25,5 @@ public class EnemyCamRotate : MonoBehaviour {
       rotationSpeed = -rotationSpeed;
       totalRotation = 0;
     }
-
-    Debug.Log(totalRotation);
   }
 }

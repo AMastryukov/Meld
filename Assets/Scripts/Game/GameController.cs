@@ -8,13 +8,4 @@ public class GameController : MonoBehaviour {
   public Vector3 startingPos;
   public GameObject[] meldWalls;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

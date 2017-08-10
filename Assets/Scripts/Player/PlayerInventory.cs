@@ -33,6 +33,7 @@ public class PlayerInventory : MonoBehaviour {
     inventoryDisplay.GetComponent<InventoryDisplay>().updateItems(inventory);
   }
 
+  // remove the item
   public void RemoveItem(GameObject item)
   {
     for (int i = 0; i < inventory.Length; i++)
