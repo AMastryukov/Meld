@@ -10,7 +10,7 @@ public class PlayerMeld : MonoBehaviour {
   public float meldAmount = 1.0f;
   public bool insideWall = false;
 
-  bool meldMode = false;
+  public bool meldMode = false;
 
   float meldDrainPerSecond = 0.25f;
   float meldGainPerSecond = 0.1f;
@@ -75,17 +75,17 @@ public class PlayerMeld : MonoBehaviour {
     {
       meldStartPos = transform.position;
 
-      GetComponent<PlayerController>().speed = 10;
+      GetComponent<PlayerController>().speed = 12;
       GetComponent<SpriteRenderer>().sprite = playerSprites[1];
-      lightObject.GetComponent<Light>().intensity = 0.2f;
+      lightObject.GetComponent<Light>().intensity = 0.8f;
       lightObject.GetComponent<Light>().spotAngle = 55;
     }
     else
     {
-      GetComponent<PlayerController>().speed = 20;
+      GetComponent<PlayerController>().speed = 23;
       GetComponent<SpriteRenderer>().sprite = playerSprites[0];
       lightObject.GetComponent<Light>().intensity = 1.25f;
-      lightObject.GetComponent<Light>().spotAngle = 110;
+      lightObject.GetComponent<Light>().spotAngle = 90;
     }
   }
 }
