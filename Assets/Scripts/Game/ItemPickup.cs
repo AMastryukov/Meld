@@ -7,9 +7,11 @@ public class ItemPickup : MonoBehaviour {
   public GameObject player;
   public bool inInventory = false;
 
+  float distanceToPickup  = 1.0f;
+
   private void OnMouseDown()
   {
-    if (!inInventory)
+    if (!inInventory && Vector3.Distance(player.transform.position, transform.position) < distanceToPickup)
     {
       player.GetComponent<PlayerInventory>().AddItem(gameObject);
       inInventory = !inInventory;

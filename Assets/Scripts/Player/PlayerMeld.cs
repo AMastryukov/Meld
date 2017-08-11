@@ -12,8 +12,9 @@ public class PlayerMeld : MonoBehaviour {
 
   public bool meldMode = false;
 
-  float meldDrainPerSecond = 0.25f;
-  float meldGainPerSecond = 0.1f;
+  public float meldDrainPerSecond = 0.25f;
+  public float meldGainPerSecond = 0.1f;
+  public float meldCastThreshold = 0.25f;
 
   Vector3 meldStartPos;
 	
@@ -21,7 +22,7 @@ public class PlayerMeld : MonoBehaviour {
 	void Update () {
     if (Input.GetKeyDown("space"))
     {
-      if (!meldMode && meldAmount < 0.5f)
+      if (!meldMode && meldAmount < meldCastThreshold)
       {
         
       } else if (!insideWall)
@@ -77,15 +78,15 @@ public class PlayerMeld : MonoBehaviour {
 
       GetComponent<PlayerController>().speed = 12;
       GetComponent<SpriteRenderer>().sprite = playerSprites[1];
-      lightObject.GetComponent<Light>().intensity = 0.8f;
-      lightObject.GetComponent<Light>().spotAngle = 25;
+      lightObject.GetComponent<Light>().intensity = 0.3f;
+      lightObject.GetComponent<Light>().spotAngle = 50;
     }
     else
     {
       GetComponent<PlayerController>().speed = 23;
       GetComponent<SpriteRenderer>().sprite = playerSprites[0];
-      lightObject.GetComponent<Light>().intensity = 1.25f;
-      lightObject.GetComponent<Light>().spotAngle = 60;
+      lightObject.GetComponent<Light>().intensity = 1.0f;
+      lightObject.GetComponent<Light>().spotAngle = 110;
     }
   }
 }

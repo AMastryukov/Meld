@@ -45,4 +45,28 @@ public class PlayerInventory : MonoBehaviour {
       }
     }
   }
+
+  // remove item by index
+  public void RemoveItemByIndex(int index)
+  {
+    inventoryDisplay.GetComponent<InventoryDisplay>().removeItem(inventory, index);
+    inventory[index] = null;
+  }
+
+  // return true if item exists
+  public int ReturnIndexWithName(string name)
+  {
+    for (int i = 0; i < inventory.Length; i++)
+    {
+      if (inventory[i] != null)
+      {
+        if(string.Compare(inventory[i].name, name) == 0)
+        {
+          return i;
+        }
+      }
+    }
+
+    return -1;
+  }
 }
