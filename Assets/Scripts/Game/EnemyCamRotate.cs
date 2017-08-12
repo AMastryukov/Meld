@@ -20,7 +20,7 @@ public class EnemyCamRotate : MonoBehaviour {
     transform.Rotate(new Vector3(0, 0, rotationSpeed) * Time.deltaTime);
     totalRotation += rotationSpeed * Time.deltaTime;
 
-    if (Mathf.Abs(totalRotation) >= rotationMax)
+    if (Mathf.Abs(totalRotation) >= rotationMax && rotationMax != -1)
     {
       rotationSpeed = -rotationSpeed;
       totalRotation = 0;

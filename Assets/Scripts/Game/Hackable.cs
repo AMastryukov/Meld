@@ -10,6 +10,7 @@ public class Hackable : MonoBehaviour {
   private void OnMouseDown()
   {
     int itemIndex = inventory.ReturnIndexWithName("item_hacktool");
+    Debug.Log(itemIndex);
 
     // if the camera is working and the player has a hacktool
     if (notDisabled && (itemIndex != -1))

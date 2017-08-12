@@ -33,4 +33,12 @@ public class DoorControl : MonoBehaviour {
     leftDoor.GetComponent<BoxCollider2D>().enabled = true;
     rightDoor.GetComponent<BoxCollider2D>().enabled = true;
   }
+
+  public void CloseDoor()
+  {
+    leftDoor.transform.position =
+      new Vector3(leftDoor.transform.position.x + 0.3f, leftDoor.transform.position.y, leftDoor.transform.position.z);
+    rightDoor.transform.position =
+      new Vector3(rightDoor.transform.position.x - 0.3f, rightDoor.transform.position.y, rightDoor.transform.position.z);
+  }
 }
