@@ -14,6 +14,7 @@ public class GridTile : MonoBehaviour {
     {
       case "floor":
         GetComponent<BoxCollider2D>().enabled = false;
+        transform.Rotate(new Vector3(0,0,90 * Random.Range(1,4)));
         break;
     }
   }

@@ -83,7 +83,7 @@ public class PlayerMeld : MonoBehaviour {
     }
     else
     {
-      GetComponent<PlayerController>().speed = 23;
+      GetComponent<PlayerController>().speed = 18;
       GetComponent<SpriteRenderer>().sprite = playerSprites[0];
       lightObject.GetComponent<Light>().intensity = 1.0f;
       lightObject.GetComponent<Light>().spotAngle = 110;
