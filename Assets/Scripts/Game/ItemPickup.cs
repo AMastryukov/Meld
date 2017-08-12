@@ -7,7 +7,7 @@ public class ItemPickup : MonoBehaviour {
   public GameObject player;
   public bool inInventory = false;
 
-  float distanceToPickup  = 1.0f;
+  float distanceToPickup  = 0.5f;
 
   private void OnMouseDown()
   {

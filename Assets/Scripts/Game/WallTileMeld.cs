@@ -18,7 +18,6 @@ public class WallTileMeld : MonoBehaviour {
   {
     if (collision.gameObject.tag == "Player")
     {
-      Debug.Log("FALSE");
       player.GetComponent<PlayerMeld>().insideWall = false;
     }
   }
