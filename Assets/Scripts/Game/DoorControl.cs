@@ -23,9 +23,9 @@ public class DoorControl : MonoBehaviour {
   private void OpenDoor()
   {
     leftDoor.transform.position = 
-      new Vector3(leftDoor.transform.position.x - 0.25f, leftDoor.transform.position.y, leftDoor.transform.position.z);
+      new Vector3(leftDoor.transform.position.x - 0.3f, leftDoor.transform.position.y, leftDoor.transform.position.z);
     rightDoor.transform.position = 
-      new Vector3(rightDoor.transform.position.x + 0.25f, rightDoor.transform.position.y, rightDoor.transform.position.z);
+      new Vector3(rightDoor.transform.position.x + 0.3f, rightDoor.transform.position.y, rightDoor.transform.position.z);
 
     // disable the main collider and enable the two door colliders
     GetComponent<BoxCollider2D>().enabled = false;
